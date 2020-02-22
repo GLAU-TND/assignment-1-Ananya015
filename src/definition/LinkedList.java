@@ -16,6 +16,18 @@ public class LinkedList<E> implements MyLinkListAdt<E> {
         afterNode.next = new Node<>(item, afterNode.next);
         size++;
     }
+    public void add(E item,int index) {
+        if (index > size || index < 0) {
+            throw new IndexOutOfBoundsException ( Integer.toString ( index ) );
+        }
+        else if(index==0){
+            addFirst ( item );
+        }
+        else
+        {
+            addAfter ( item,getNode ( index-1 ));
+        }
+    }
     private Node<E> getNode(int index)
     {
         Node<E> reponse=head;
