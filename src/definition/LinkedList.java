@@ -60,6 +60,21 @@ public class LinkedList<E> implements MyLinkListAdt<E> {
         return response;
 
     }
+    public E remove(int index)
+    {
+        E response=null;
+        if(index<0 || index>size){
+            throw new IndexOutOfBoundsException (Integer.toString ( index ));
+        }
+        else if(index==0){
+            response=removeFirst ();
+    }
+        else{
+            Node<E> preNode=getNode ( index-1 );
+            response=removeAfter ( preNode );
+        }
+        return response;
+    }
     @Override
     public void add(Object item) {
 
