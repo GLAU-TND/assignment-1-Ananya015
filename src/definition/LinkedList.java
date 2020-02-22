@@ -28,12 +28,26 @@ public class LinkedList<E> implements MyLinkListAdt<E> {
             addAfter ( item,getNode ( index-1 ));
         }
     }
+
     private Node<E> getNode(int index)
     {
         Node<E> reponse=head;
         for(int i=0;i<index;i++){
             reponse=reponse.getNext ();
         }
+        return reponse;
+    }
+    private E removeFirst(){
+        Node<E> temp=head;
+        E reponse=null;
+        if(head!=null){
+            head=head.getNext ();
+        }
+        if(temp!=null){
+            size--;
+            reponse=temp.getData ();
+        }
+
         return reponse;
     }
     @Override
