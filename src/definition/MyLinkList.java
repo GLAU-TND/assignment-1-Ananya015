@@ -27,8 +27,5 @@ public class MyLinkList implements MyContactListAdt {
 
     }
 
-    private static class Node<E>
-    {
 
-    }
 }

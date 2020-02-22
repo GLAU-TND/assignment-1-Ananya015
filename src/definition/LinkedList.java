@@ -82,7 +82,7 @@ public class LinkedList<E> implements MyLinkListAdt<E> {
 
     @Override
     public E remove() {
-        return null;
+        return remove (size-1);
     }
 
     @Override
