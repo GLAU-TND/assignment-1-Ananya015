@@ -16,6 +16,14 @@ public class LinkedList<E> implements MyLinkListAdt<E> {
         afterNode.next = new Node<>(item, afterNode.next);
         size++;
     }
+    private Node<E> getNode(int index)
+    {
+        Node<E> reponse=head;
+        for(int i=0;i<index;i++){
+            reponse=reponse.getNext ();
+        }
+        return reponse;
+    }
     @Override
     public void add(Object item) {
 
