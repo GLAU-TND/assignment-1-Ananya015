@@ -5,8 +5,15 @@ import Adt.MyLinkListAdt;
 public class LinkedList<E> implements MyLinkListAdt<E> {
     private Node<E> head=null;
     private int size=0;
-    private void addFirst(E item){
+
+    private void addFirst(E item)
+    {
         head=new Node<> (  item,head);
+        size++;
+    }
+    private void addAfter(E item,Node<E> afterNode)
+    {
+        afterNode.next = new Node<>(item, afterNode.next);
         size++;
     }
     @Override
