@@ -59,11 +59,32 @@ public class MyLinkList implements MyContactListAdt {
                 break;
             }
             else{
-                System.out.println ("Please Enter a Vaild Input i.e., y(lowercase) for Yes or n(lowercase for NO");
+                System.out.println ("Please Enter a Vaild Input i.e., y(lowercase) for Yes or n(lowercase) for NO");
             }
         }
         return contactNumbers;
 
+    }
+    private String getEmail(){
+        String Email=null;
+        while(true){
+            System.out.println ("Do you want to add an Email ? (y/n) :");
+            String s=sc.next();
+            char at=s.charAt ( 0 );
+            if(s.length()>1){
+                System.out.println ("Please Enter a valid Input i.e., y(lowercase) for Yes or n(lowercase) for No");
+                continue;
+            }
+            if(at=='y'){
+                System.out.println ("Email Address: ");
+                Email=sc.next ();
+            }else if (at =='n'){
+                break;
+            }else {
+                System.out.println ("Please Enter Valid Input i.e., y(lowecase) for Yes or n(lowercase) for NO");
+            }
+        }
+        return Email;
     }
 
     @Override
