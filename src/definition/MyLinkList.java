@@ -135,6 +135,14 @@ public class MyLinkList implements MyContactListAdt {
 
     @Override
     public void viewContact() {
+        System.out.println("---Here are all your contacts---\n" +
+                "-------- * -------- * -------- * --------");
+
+        for (int i = 0; i < ConBook.size; i++) {
+            Person response = ConBook.getData(i);
+            System.out.println(response);
+        }
+        System.out.println("Total Contacts: " + ConBook.size);
 
     }
 
