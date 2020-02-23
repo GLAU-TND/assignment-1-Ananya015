@@ -131,6 +131,13 @@ public class MyLinkList implements MyContactListAdt {
         }
         return index;
     }
+    private void printNames() {
+        System.out.println("Here are your all contacts:");
+        for (int i = 0; i < ConBook.size; i++) {
+            Person temp = ConBook.getData(i);
+            System.out.println((i + 1) + "." + temp.getFirstName() + " " + temp.getLastName());
+        }
+    }
 
 
     @Override
@@ -148,6 +155,7 @@ public class MyLinkList implements MyContactListAdt {
 
     @Override
     public void deleteContact() {
+
 
     }
 
