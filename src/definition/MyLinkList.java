@@ -13,6 +13,12 @@ public class MyLinkList implements MyContactListAdt {
         String fName=sc.next ();
         return fName;
     }
+    private String getLastName()
+    {
+        System.out.println ("LastName: ");
+        String lName=sc.next ();
+        return lName;
+    }
 
     @Override
     public void addContact() {
