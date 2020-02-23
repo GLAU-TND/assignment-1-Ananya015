@@ -76,8 +76,8 @@ public class LinkedList<E> implements MyLinkListAdt<E> {
         return response;
     }
     @Override
-    public void add(Object item) {
-
+    public void add(E item) {
+    add ( item,size );
     }
 
     @Override
