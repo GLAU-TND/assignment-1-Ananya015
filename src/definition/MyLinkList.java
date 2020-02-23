@@ -1,12 +1,16 @@
 package definition;
 
 import Adt.MyContactListAdt;
+import Adt.MyLinkListAdt;
 
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class MyLinkList implements MyContactListAdt {
     Scanner sc = new Scanner ( System.in );
+
+    LinkedList <Person> ConBook=new LinkedList<> ();
+    LinkedList <String> contactNumbers=new LinkedList<>();
     private String getFirstName()
     {
         System.out.println ("Please enter the Name of Person");
@@ -89,8 +93,45 @@ public class MyLinkList implements MyContactListAdt {
 
     @Override
     public void addContact() {
+        System.out.println("You have chosen to add a new contact:");
+        String firstname = getFirstName ();
+        String lastname = getLastName();
+        contactNumbers = getContactNumbers ();
+        String Email = getEmail ();
+        Person newContact;
+        newContact = new Person(firstname, lastname, Email, contactNumbers);
+        int index = compareFirstName (firstname);
+        ConBook.add(newContact, index);
+        System.out.println("Contact Added SucessFully");
+        System.out.println();
+        System.out.println();
+
 
     }
+    private int compareFirstName(String fName) {
+        int index = 0;
+        if (ConBook.size == 0) {
+        } else {
+            for (int i = 0; i < ConBook.size; i++) {
+                Person temp = ConBook.getData(i);
+                String name = temp.getFirstName();
+                name = name.toLowerCase();
+                fName = fName.toLowerCase();
+                if (name.compareTo(fName) < 0) {
+                    index++;
+                } else if (name.compareTo(fName) == 0) {
+                    return index;
+
+                } else {
+                    break;
+                }
+
+            }
+
+        }
+        return index;
+    }
+
 
     @Override
     public void viewContact() {
